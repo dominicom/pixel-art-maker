@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pixel Art Maker!</title>
+    <script src="js/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"> -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body oncontextmenu="return false;">
+  <header>
+  <div class="top-bar">
+    <div id="logo"><img src="img/assets_logo.svg" width="240" height="30" title="Pixel Art Maker" alt="Pixel Art Maker"/></div>
+    <div id="header"><img src="img/assets_header.svg" width="500" height="30" alt="credits: Dominik Kiepuszewski x Udacity"/></div>
+  </div>
+  </header>
+  <section>
+    <div class="panel left">
+      <div class="bar">Actions</div>
+      <div class="pane" id="actions">
+        <div id="clear">
+        <img src="img/icon_clear.svg" title="Clear Button" alt="Clear Button" width="60" height="60"/></div>
+        <p>clear</p>
+        <div id="reset">
+        <img src="img/icon_reset.svg" title="Reset Button" alt="Reset Button" width="60" height="60"/></div>
+        <p>reset</p>
+      </div>
+      <div class="bar">Tips</div>
+      <div class="pane" id="tips">
+         <img src="img/click_left.svg" width="40" height="40" alt="Left click"/>
+         <span>draw</span>
+         <hr />
+         <img src="img/click_right.svg" width="40" height="40" alt="Right click"/>
+         <span>erease</span>
+      </div>
+      <div class="bar">Info</div>
+      <div class="pane" id="infoLog">
+         <p id="dimesion"></p>
+         <span id="cell-x"></span>
+         <span id="cell-y"></span>
+         <!-- <hr />
+         <p id="matrix"></p>
+         <span id="size"></span>
+         <span id="amount"></span> -->
+         <hr />
+         <p id="position"></p>
+         <span id="pos-x"></span>
+         <span id="pos-y"></span>
+      </div>
+    </div>
+    <div class="popup">
+    <div class="initate-canvas-form">
+      <div class="popup-content"><h2>Design Canvas</h2></div>
+      <hr />
+
+      <div class="popup-content">
+
+        <h4>Choose Grid Size:</h4>
+        <label id="popup-labels">
+        <span>Width</span><span>Height</span>
+        </label>
+
+        <div>
+        <form id="sizePicker">
+          <div><input type="number" id="input-width" name="width" min="1" max="48" value="16"></div>
+          <div><img src="img/icon_x.svg" width="30" height="30"/></div>
+          <div><input type="number" id="input-height" name="height" min="1" max="48" value="16"></div>
+          <div id="spacer"></div>
+          <div><input type="button" id="create-canvas" value="build canvas"></div>
+      </form>
+        </div>
+
+      </div>
+    </div>
+    </div>
+    <div class="canvas-container">
+
+    </div>
+    <div class="panel right">
+      <div class="bar">Pick A Color</div>
+      <input type="color" id="colorPicker" title="pick a color">
+      <div class="bar">Swatches</div>
+      <div class="swatches">
+      </div>
+    </div>
+  </section>
+  <!-- <footer>
+    <div  class="footer"><h2></h2></div>
+  </footer> -->
+  <script src="js/designs.js"></script>
+</body>
+</html>
