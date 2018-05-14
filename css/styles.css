@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  text-transform: uppercase;
 }
 body {
   margin: 0;
@@ -16,9 +17,9 @@ section, header {
 }
 /* HEADER */
 .top-bar {
-  display: inherit;
+  display: inherit; /* (flex) Inheritance from header */
   background: linear-gradient(50deg, #50d7ff, #6d55c2);
-  color: white;
+  color: #fff;
   width: 100%;
   height: 60px;
   margin: auto;
@@ -30,7 +31,8 @@ section, header {
   width: 100%;
   min-width: 550px;
 }
-#logo, #header {
+#logo,
+#header {
   padding: 15px;
 }
 
@@ -43,11 +45,11 @@ section, header {
   padding: 0;
   margin: 0;
   min-height: 50px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
-  text-transform: uppercase;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
   z-index: 1;
 }
-#reset, #clear {
+#reset,
+#clear {
   background-color: inherit;
   width: 60px;
   height: 60px;
@@ -55,43 +57,43 @@ section, header {
   border: none;
   text-align: center;
   cursor: pointer;
-  padding: 0px;
+  padding: 0;
   margin-bottom: 5px;
 }
-#clear:hover, #reset:hover {
+#clear:hover,
+#reset:hover {
   background-color: #50d7ff;
   padding: 1px 1px;
 }
-#clear:active, #reset:active {
+#clear:active,
+#reset:active {
   background-color: #6d55c2;
   padding: 2px 2px;
+}
+.pane,
+.bar {
+  color: #fff;
+  padding: 10px;
+  margin: 0;
+  width: 100%;
 }
 .bar {
   letter-spacing: 0.05em;
   text-align: center;
   font-size: 10px;
-  color: white;
   background-color: #3c3c3c;
-  width: 100%;
   height: auto;
-  padding: 10px;
-  margin: 0px;
 }
 .pane {
   text-align: left;
-  color: white;
   font-size: 12px;
-  width: 100%;
-  padding: 10px;
-  margin: 0px;
 }
 .pane span {
-  display: block;
   color: #ccc;
 }
 .pane p {
   margin-bottom: 5px;
-  margin-top: 0px;
+  margin-top: 0;
 }
 .pane hr {
   margin-top: 10px;
@@ -99,12 +101,13 @@ section, header {
 }
 /* LEFT PANEL */
 .left {
-  left: 0px;
+  left: 0;
 }
 #infoLog {
   text-align: left;
 }
-#tips, #actions {
+#tips,
+#actions {
   text-align: center;
 }
 #tips img {
@@ -117,7 +120,7 @@ section, header {
 }
 /* RIGHT PANEL */
 .right {
-  right: 0px;
+  right: 0;
 }
 #colorPicker {
   -webkit-appearance: none;
@@ -130,7 +133,7 @@ section, header {
   cursor: pointer;
   height: 60px;
   width: 60px;
-  padding: 0px;
+  padding: 0;
   margin: 10px;
 }
 #colorPicker::-webkit-color-swatch-wrapper,
@@ -143,18 +146,18 @@ section, header {
   font-weight: 500;
   text-align: center;
   background-color: inherit;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 }
 .swatchColor {
-  display: flex;
   height: 40px;
   width: 60px;
   padding: 10px;
   margin: 10px;
   cursor: pointer;
 }
-.swatchColor:hover, #colorPicker:hover {
+.swatchColor:hover,
+#colorPicker:hover {
   outline-style: solid;
   outline-color: #50d7ff;
   outline-width: 10px;
@@ -168,11 +171,11 @@ section, header {
 }
 .cell {
   border-radius: 3px;
-  background: white;
+  background: #fff;
   width: 20px;
   height: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
-  cursor: url(assets/icon_draw.png),  cell;
+  cursor: url(assets/icon_draw.png), cell;
 }
 /* POPUPS */
 .popup {
@@ -224,7 +227,7 @@ input#create-canvas:hover {
   width: 150px;
 }
 #sizePicker div {
-  margin: 0px;
+  margin: 0;
   line-height: 50px;
   height: 50px;
 }
@@ -251,16 +254,14 @@ input[type=number] {
 }
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
-  margin-right: 0px;
+  margin-right: 0;
 }
 input[type=button] {
   background-color: #999;
   color: #fff;
-  text-transform: uppercase;
 }
 hr {
-  border: none;
-  border-bottom: 1px solid #999;
+  border: 1px solid #999;
 }
 table {
   border-collapse: collapse;
@@ -269,11 +270,6 @@ table {
 }
 h2, h4 {
   margin: 0;
-  padding: 0px;
-  -webkit-margin-before: 0em;
-  -webkit-margin-after: 0em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
+  padding: 0;
   font-weight: 400;
-  text-transform: uppercase;
 }

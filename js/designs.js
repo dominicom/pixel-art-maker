@@ -1,8 +1,4 @@
-// Select color input
-// Select size input
-
-// When size is submitted by the user, call makeGrid()
-
+// Some starter settings
 
 const createCanvas = $('#create-canvas');
 const container = $('.canvas-container');
@@ -17,11 +13,15 @@ const infoLog = $('#infoLog');
 const inputValue = $('input');
 const canvasGrid = $('#pixel-canvas');
 
+
+// Default selected color in Color Picker needed for Swatches Palette
 let selectedColor = "#000000";
 
 $(function() {
 
-  //CREATE CANVAS
+
+  // When size is submitted by the user, call makeGrid()
+  // CREATE CANVAS
   createCanvas.on('click', function makeGrid(canvas, canvasWidth, canvasHeight) {
     canvasWidth = $('#input-width').val();
     canvasHeight = $('#input-height').val();
@@ -39,6 +39,11 @@ $(function() {
     initiateCanvasForm.hide(200);
     infoLog(canvasWidth, canvasHeight);
   });
+
+
+  // Select color input
+  // Select size input
+
   // INPUT MIN/MAX VALUE to control the size
   inputValue.on('input', function minMaxValue(minValue, maxValue) {
     minValue = parseInt($(this).attr('min'));
@@ -50,24 +55,6 @@ $(function() {
       $(this).val(minValue);
     }
   });
-
-
-
-
-
-
-  // inputValue.on('input', function maxValue(maxValue) {
-  //   maxValue = parseInt($(this).attr('max'));
-  //   if ( $(this).val() > maxValue) {
-  //     $(this).val(maxValue);
-  //   }
-  // });
-  // inputValue.on('input', function minValue(minValue) {
-  //   minValue = parseInt($(this).attr('min'));
-  //   if ( $(this).val() < minValue) {
-  //     $(this).val(minValue);
-  //   }
-  // });
 
   // SWATCHES PALETTE CREATOR
   swatches.each(function(color,index) { // index tu console.log wyswietla DOM w consolii ot ciekawostka.
@@ -92,8 +79,6 @@ $(function() {
 
   colorPicker.val(selectedColor);
 
-
-
   // DRAW PIXEL
   function drawPixel(pixel, color) {
     color = colorPicker.val();
@@ -105,21 +90,17 @@ $(function() {
   container.on('mousedown', pixel, function(event) {
     event.preventDefault();
     drawPixel(this);
-    if (event.buttons == 2) {
+    if (event.buttons === 2) {
       ereasePixel(this);
     }
   });
   container.on('mouseover', pixel, function(event) {
-    if (event.buttons == 1) {
+    if (event.buttons === 1) {
       drawPixel(this);
-    } else if (event.buttons == 2) {
+    } else if (event.buttons === 2) {
       ereasePixel(this);
-      //container.css
     }
   });
-  // canvasGrid.on('dragstart', function(event) {
-  //   event.preventDefault();
-  // });
 
   // ACTIONS PANEL
   function clearCanvas() {
@@ -136,7 +117,7 @@ $(function() {
     resetCanvas();
   });
 
-  //INFO LOG - Intresting facts about the canvas
+  // INFO LOG - Intresting facts about the canvas
   function infoLog(canvasWidth, canvasHeight) {
     let amount = canvasWidth * canvasHeight;
     $('#dimesion').text("GRID SIZE");
@@ -145,33 +126,15 @@ $(function() {
     $('#amount').text("(" + amount + " px)");
     $('#position').text("POSITION");
   }
-  container.on('mouseover', pixel, function positionLog(posx, posy) { //
+  container.on('mouseover', pixel, function positionLog(posx, posy) {
     posx = $(this).attr('col');
     posy = $(this).attr('row');
     $('#pos-x').text("X : " + posx + " px");
     $('#pos-y').text("Y : " + posy + " px");
   });
 });
+
+// Prevent dragging elements - helpful when drawing pixels
 document.addEventListener("dragstart", function(event) {
     event.preventDefault();
 });
-
-
-
-
-
-
-
-
-
-// function infoLog(canvasWidth, canvasHeight) {
-//   let amount = canvasWidth * canvasHeight;
-//   let mpix = amount/10000;
-//   $('#dimesion').text("DIMESION");
-//   $('#cell-x').text("W : " + canvasWidth + " px");
-//   $('#cell-y').text("H : " + canvasHeight + " px");
-//   $('#matrix').text("MATRIX");
-//   $('#size').text(mpix.toFixed(2) + " Mpix");
-//   $('#amount').text("(" + amount + " px)");
-//   $('#position').text("POSITION");
-// }
