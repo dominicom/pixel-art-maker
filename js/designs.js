@@ -15,16 +15,16 @@ const canvasGrid = $('#pixel-canvas');
 
 
 // Default selected color in Color Picker needed for Swatches Palette
-let selectedColor = "#000000";
+let selectedColor = "#000000"; // Here is not recommended to make it in shorthand #000
+
 
 $(function() {
-
-
   // When size is submitted by the user, call makeGrid()
   // CREATE CANVAS
   createCanvas.on('click', function makeGrid(canvas, canvasWidth, canvasHeight) {
     canvasWidth = $('#input-width').val();
     canvasHeight = $('#input-height').val();
+
     //Canvas Constructor Loop
     canvas = '<table id="pixel-canvas">';
     for (let row = 0; row < canvasHeight; row++) {
@@ -57,12 +57,11 @@ $(function() {
   });
 
   // SWATCHES PALETTE CREATOR
-  swatches.each(function(color,index) { // index tu console.log wyswietla DOM w consolii ot ciekawostka.
+  swatches.each(function(color, index) { // index tu console.log wyswietla DOM w consolii ot ciekawostka.
     color = ['#4E41CC', '#8B008B', '#FF1493', '#FF412A', '#F4A460', '#FFFE51', '#ADFF2F', '#00BFFF']; // '#00BFFF', '#4E41CC',
     let palette = '';
     for (let i = 0; i < color.length; i++) {
       palette += '<div class="swatchColor" title="swatch: ' + color[i] + '" data-color="' + color[i] + '" style="background-color: ' + color[i] + ';"></div>';
-      // console.log(index);
     }
     $(this).append(palette);
   });
@@ -87,6 +86,7 @@ $(function() {
   function ereasePixel(pixel) {
     $(pixel).removeAttr('style');
   }
+  
   container.on('mousedown', pixel, function(event) {
     event.preventDefault();
     drawPixel(this);
@@ -94,6 +94,7 @@ $(function() {
       ereasePixel(this);
     }
   });
+
   container.on('mouseover', pixel, function(event) {
     if (event.buttons === 1) {
       drawPixel(this);
@@ -102,17 +103,21 @@ $(function() {
     }
   });
 
+
   // ACTIONS PANEL
   function clearCanvas() {
     $(pixel).removeAttr('style');
   }
+
   function resetCanvas() {
     $('table').remove();
     initiateCanvasForm.show(200);
   }
+
   clear.on('click', function() {
     clearCanvas();
   });
+
   reset.on('click', function() {
     resetCanvas();
   });
@@ -126,15 +131,22 @@ $(function() {
     $('#amount').text("(" + amount + " px)");
     $('#position').text("POSITION");
   }
+
   container.on('mouseover', pixel, function positionLog(posx, posy) {
     posx = $(this).attr('col');
     posy = $(this).attr('row');
     $('#pos-x').text("X : " + posx + " px");
     $('#pos-y').text("Y : " + posy + " px");
   });
+
 });
 
-// Prevent dragging elements - helpful when drawing pixels
+// Prevent dragging elements and invoke context menu by right mouse button click
+// - helpful when drawing pixels
 document.addEventListener("dragstart", function(event) {
     event.preventDefault();
+});
+
+container.on('contextmenu', function(event) {
+  event.preventDefault();
 });

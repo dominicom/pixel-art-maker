@@ -17,19 +17,22 @@
 * You can change pen color using color picker in `PICK A COLOR` panel or just choose one from `SWATCHES`
 * Use `CLEAR` button erase canvas or `RESET` to make a new canvas from the scratch.
 
+#### Screenshots
+![screenshot](screenshots/screenshot.jpg)
+![screenshot](screenshots/isometric_prev.jpg)
 
 ## About the project
 
-This is a final student project made for Udacity classroom on Front-End Web Developer track of Phase 1 - preselection to Nanodegree program. Simple designed graphical editor to make a pixel masterpeace using JavaScript, HTML and CSS.
+This is a final student project made for Udacity classroom on Front-End Web Developer track of _Phase 1_ - pre-selection to Nanodegree program. Simple designed graphical editor to make a pixel masterpeace using JavaScript, HTML and CSS.
 
 #### Starter Project
 > link https://github.com/udacity/project-pixel-art-maker-starter
 
-The starter code includes all required HTML input fields, as well as some basic styling. A skeleton of the `makeGrid()` function is provided as well. To get started, student have to open `designs.js` and start building out the app's functionality.
+The starter code includes all required HTML input fields, as well as some basic styling. A skeleton of the `makeGrid()` function is provided as well. To get started, students have to open `designs.js` and start building out the app's functionality.
 
 #### Graphics and design resources
 
-Original graphic design, user interface and experience, assets designed by the [Author](https://www.kiepuszewski.com). Used [Udacity](https://www.udacity.com) and logos of companies listed in section _Worked for.._ are registered, and [I d I](https://www.kiepuszewski.com) is a copyrighted personal brand logo of the **Author**.
+Original graphic design, user interface and experience, assets designed by the [Author](https://www.kiepuszewski.com). Used [Udacity](https://www.udacity.com) logo is registered and [I d I](https://www.kiepuszewski.com) is a copyrighted personal brand logo of the **Author**.
 
 
 #### External libraries Used
